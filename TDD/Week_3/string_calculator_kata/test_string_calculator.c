@@ -4,9 +4,11 @@
 #include <setjmp.h>
 #include <cmocka.h>
 
+#include <stdlib.h>
+
 static int add(const char *numbers)
 {
-    return 0;
+    return strtol(numbers, NULL, 0);
 }
 
 /**
