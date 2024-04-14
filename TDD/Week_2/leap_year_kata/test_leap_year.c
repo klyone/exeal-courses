@@ -24,11 +24,17 @@ static void test_100_is_no_leap_year(void **state)
     assert_int_equal(is_leap_year(100), FALSE);
 }
 
+static void test_800_is_leap_year(void **state)
+{
+    assert_int_equal(is_leap_year(800), TRUE);
+}
+
 int main(void) {
     const struct CMUnitTest tests[] = {
         cmocka_unit_test(test_cmocka_is_properly_configured),
         cmocka_unit_test(test_400_is_leap_year),
         cmocka_unit_test(test_100_is_no_leap_year),
+        cmocka_unit_test(test_800_is_leap_year),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
