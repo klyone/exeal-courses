@@ -49,6 +49,15 @@ static void test_360_is_leap_year(void **state)
     assert_int_equal(is_leap_year(360), TRUE);
 }
 
+static void test_555_is_no_leap_year(void **state)
+{
+    assert_int_equal(is_leap_year(555), FALSE);
+}
+
+static void test_300_is_no_leap_year(void **state)
+{
+    assert_int_equal(is_leap_year(300), FALSE);
+}
 
 int main(void) {
     const struct CMUnitTest tests[] = {
@@ -60,6 +69,8 @@ int main(void) {
         cmocka_unit_test(test_4_is_leap_year),
         cmocka_unit_test(test_120_is_leap_year),
         cmocka_unit_test(test_360_is_leap_year),
+        cmocka_unit_test(test_555_is_no_leap_year),
+        cmocka_unit_test(test_300_is_no_leap_year),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
