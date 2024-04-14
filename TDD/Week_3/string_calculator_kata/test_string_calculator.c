@@ -4,6 +4,10 @@
 #include <setjmp.h>
 #include <cmocka.h>
 
+static int add(const char *numbers)
+{
+    return 0;
+}
 
 /**
  *
