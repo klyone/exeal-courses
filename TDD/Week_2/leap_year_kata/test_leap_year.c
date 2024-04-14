@@ -4,9 +4,7 @@
 #include <setjmp.h>
 #include <cmocka.h>
 
-int is_leap_year(unsigned int year) {
-    return 1;
-}
+#include "leap_year.h"
 
 /**
  *
@@ -18,7 +16,7 @@ static void test_cmocka_is_properly_configured(void **state) {
 
 static void test_400_is_leap_year(void **state)
 {
-    assert_int_equal(is_leap_year(400), 1);
+    assert_int_equal(is_leap_year(400), TRUE);
 }
 
 int main(void) {
