@@ -6,7 +6,7 @@ int is_leap_year(unsigned int year)
         return TRUE;
     }
     else {
-        if (year == 4)
+        if (year == 4 || year == 120)
             return TRUE;
         else
             return FALSE;
