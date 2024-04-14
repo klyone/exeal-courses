@@ -2,5 +2,8 @@
 
 int is_leap_year(unsigned int year)
 {
-    return TRUE;
+    if (year == 400)
+        return TRUE;
+    else
+        return FALSE;
 }
