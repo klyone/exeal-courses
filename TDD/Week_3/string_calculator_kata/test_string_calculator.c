@@ -34,6 +34,10 @@ static void test_many_numbers_string_should_add_all(void **state) {
     assert_int_equal(add("1,1,1,2,2,2,3,3,3,6,6,6,7,7,7,8,8,8"), 81);
 }
 
+static void test_end_of_line_sep_with_commas(void **state) {
+    assert_int_equal(add("1,5\n6"), 12);
+}
+
 int main(void) {
     const struct CMUnitTest tests[] = {
         cmocka_unit_test(test_cmocka_is_properly_configured),
@@ -42,6 +46,7 @@ int main(void) {
         cmocka_unit_test(test_two_numbers_string_should_add_both_number),
         cmocka_unit_test(test_three_numbers_string_should_add_all),
         cmocka_unit_test(test_many_numbers_string_should_add_all),
+        cmocka_unit_test(test_end_of_line_sep_with_commas),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
