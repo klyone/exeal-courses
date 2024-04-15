@@ -42,6 +42,11 @@ static void test_custom_separator(void **state) {
     assert_int_equal(add("//@\n1@5@6"), 12);
 }
 
+static void test_custom_separator2(void **state) {
+    assert_int_equal(add("//&\n1&55&66"), 122);
+}
+
+
 int main(void) {
     const struct CMUnitTest tests[] = {
         cmocka_unit_test(test_cmocka_is_properly_configured),
@@ -52,6 +57,7 @@ int main(void) {
         cmocka_unit_test(test_many_numbers_string_should_add_all),
         cmocka_unit_test(test_end_of_line_sep_with_commas),
         cmocka_unit_test(test_custom_separator),
+        cmocka_unit_test(test_custom_separator2),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
