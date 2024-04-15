@@ -50,6 +50,10 @@ static void test_ignore_negative_values(void **state) {
     assert_int_equal(add("1,2,3,4,-5,6,8,-7"), 24);
 }
 
+static void test_ignore_values_higher_than_1000(void **state) {
+    assert_int_equal(add("1,2,1001,5000,-5,6,8,-7"), 17);
+}
+
 
 int main(void) {
     const struct CMUnitTest tests[] = {
@@ -63,6 +67,7 @@ int main(void) {
         cmocka_unit_test(test_custom_separator),
         cmocka_unit_test(test_custom_separator2),
         cmocka_unit_test(test_ignore_negative_values),
+        cmocka_unit_test(test_ignore_values_higher_than_1000),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
