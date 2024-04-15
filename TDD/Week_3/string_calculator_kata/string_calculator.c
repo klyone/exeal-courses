@@ -7,15 +7,23 @@
 int add(const char *numbers)
 {
     char *tmp = calloc(strlen(numbers), sizeof(char));
-    strncpy(tmp, numbers, strlen(numbers));
+    char sep[10];
 
-    char *n = strtok(tmp, ",\n");
+    strncpy(tmp, numbers, strlen(numbers));
+    strncpy(sep, ",\n", 4);
+
+    if (tmp[0] == '/' && tmp[1] == '/') {
+        sep[0] = tmp[2];
+        sep[1] = 0;
+    }
+
+    char *n = strtok(tmp, sep);
     int sum = 0;
 
     while (n != NULL) {
        int number = strtol(n, NULL, 0);
        sum += number;
-       n = strtok(NULL, ",\n");
+       n = strtok(NULL, sep);
     }
 
     free(tmp);
