@@ -22,7 +22,7 @@ int add(const char *numbers)
 
     while (n != NULL) {
        int number = strtol(n, NULL, 0);
-       if (number >= 0)
+       if (number >= 0 && number <= 1000)
            sum += number;
        n = strtok(NULL, sep);
     }
