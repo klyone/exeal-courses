@@ -4,3 +4,5 @@ The goal of this kata is to implement a string calculator that is able to sum in
 The concrete rules are the following ones:
 
 - Step 1: 0, 1 or 2 numbers separated by commas. The empty string returns the 0 value -> Function signature: int Add(String numbers)
+
+- Step 2: Add can receive any amount of integers inside the string.
