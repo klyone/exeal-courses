@@ -46,6 +46,10 @@ static void test_custom_separator2(void **state) {
     assert_int_equal(add("//&\n1&55&66"), 122);
 }
 
+static void test_ignore_negative_values(void **state) {
+    assert_int_equal(add("1,2,3,4,-5,6,8,-7"), 24);
+}
+
 
 int main(void) {
     const struct CMUnitTest tests[] = {
@@ -58,6 +62,7 @@ int main(void) {
         cmocka_unit_test(test_end_of_line_sep_with_commas),
         cmocka_unit_test(test_custom_separator),
         cmocka_unit_test(test_custom_separator2),
+        cmocka_unit_test(test_ignore_negative_values),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
