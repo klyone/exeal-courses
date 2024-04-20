@@ -31,6 +31,10 @@ static void add_a_string_with_several_number_return_the_sum(void **state) {
     assert_int_equal(Add("3,5,7"), 15);
 }
 
+static void add_a_string_with_several_number_return_the_sum2(void **state) {
+    assert_int_equal(Add("3,5,7,1,1"), 17);
+}
+
 int main(void) {
     const struct CMUnitTest tests[] = {
         cmocka_unit_test(test_cmocka_is_properly_configured),
@@ -38,6 +42,7 @@ int main(void) {
         cmocka_unit_test(add_a_string_with_one_number_return_this_number),
         cmocka_unit_test(add_a_string_with_two_number_return_the_sum),
         cmocka_unit_test(add_a_string_with_several_number_return_the_sum),
+        cmocka_unit_test(add_a_string_with_several_number_return_the_sum2),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
