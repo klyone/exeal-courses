@@ -4,6 +4,11 @@
 #include <setjmp.h>
 #include <cmocka.h>
 
+int Add(const char *string)
+{
+    return 0;
+}
+
 /**
  *
  * This is a dummy test to ensure that the cmocka is properly configured
@@ -12,7 +17,6 @@
 static void test_cmocka_is_properly_configured(void **state) {
 }
 
-// TODO: Implement the basic Add method with no numbers
 static void add_with_empty_string_is_zero(void **state) {
     assert_int_equal(Add(""), 0);
 }
@@ -23,6 +27,8 @@ static void add_with_empty_string_is_zero(void **state) {
 int main(void) {
     const struct CMUnitTest tests[] = {
         cmocka_unit_test(test_cmocka_is_properly_configured),
+        cmocka_unit_test(add_with_empty_string_is_zero),
+
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
