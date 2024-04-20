@@ -1,4 +1,4 @@
 cmake_minimum_required(VERSION 3.5)
 project(StringCalculator)
-add_executable(test_string_calculator test_string_calculator.c string_calculator.c)
+add_executable(test_string_calculator test_string_calculator.c)
 target_link_libraries(test_string_calculator PRIVATE cmocka)
