@@ -4,9 +4,10 @@
 
 int Add(const char *string)
 {
-    int number;
+    int number = 0;
+    int number2 = 0;
 
-    sscanf(string, "%d", &number);
+    sscanf(string, "%d,%d", &number, &number2);
 
-    return number;
+    return number + number2;
 }
