@@ -4,10 +4,7 @@
 #include <setjmp.h>
 #include <cmocka.h>
 
-int Add(const char *string)
-{
-    return 0;
-}
+#include "string_calculator.h"
 
 /**
  *
