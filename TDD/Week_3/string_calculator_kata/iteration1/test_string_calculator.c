@@ -13,6 +13,10 @@ static void test_cmocka_is_properly_configured(void **state) {
 }
 
 // TODO: Implement the basic Add method with no numbers
+static void add_with_empty_string_is_zero(void **state) {
+    assert_int_equal(Add(""), 0);
+}
+
 // TODO: Implement the basic Add method with one number
 // TODO: Implement the basic Add method with two numbers
 
