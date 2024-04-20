@@ -12,6 +12,10 @@
 static void test_cmocka_is_properly_configured(void **state) {
 }
 
+// TODO: Implement the basic Add method with no numbers
+// TODO: Implement the basic Add method with one number
+// TODO: Implement the basic Add method with two numbers
+
 int main(void) {
     const struct CMUnitTest tests[] = {
         cmocka_unit_test(test_cmocka_is_properly_configured),
