@@ -46,6 +46,10 @@ static void add_a_string_with_custom_sep2(void **state) {
     assert_int_equal(Add("//@\n1@2@6"), 9);
 }
 
+static void add_a_string_void_neg_values(void **state) {
+    assert_int_equal(Add("1,2,3,-9,4,-5"), 10);
+}
+
 int main(void) {
     const struct CMUnitTest tests[] = {
         cmocka_unit_test(test_cmocka_is_properly_configured),
@@ -57,6 +61,7 @@ int main(void) {
         cmocka_unit_test(add_a_string_with_end_of_line_sep),
         cmocka_unit_test(add_a_string_with_custom_sep),
         cmocka_unit_test(add_a_string_with_custom_sep2),
+        cmocka_unit_test(add_a_string_void_neg_values),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
