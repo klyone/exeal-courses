@@ -11,7 +11,7 @@ int Add(const char *string)
     int i;
 
     for(i = 0 ; i < len ; i++) {
-        if(sscanf(&string[i], "%d", &number))
+        if(string[i] != ',' && string[i] != '\n' && sscanf(&string[i], "%d", &number))
             sum += number;
     }
 
