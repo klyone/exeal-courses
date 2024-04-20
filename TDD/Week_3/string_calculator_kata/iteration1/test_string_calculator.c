@@ -42,6 +42,9 @@ static void add_a_string_with_custom_sep(void **state) {
     assert_int_equal(Add("//;\n1;2"), 3);
 }
 
+static void add_a_string_with_custom_sep2(void **state) {
+    assert_int_equal(Add("//@\n1@2@6"), 9);
+}
 
 int main(void) {
     const struct CMUnitTest tests[] = {
@@ -53,6 +56,7 @@ int main(void) {
         cmocka_unit_test(add_a_string_with_several_number_return_the_sum2),
         cmocka_unit_test(add_a_string_with_end_of_line_sep),
         cmocka_unit_test(add_a_string_with_custom_sep),
+        cmocka_unit_test(add_a_string_with_custom_sep2),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
