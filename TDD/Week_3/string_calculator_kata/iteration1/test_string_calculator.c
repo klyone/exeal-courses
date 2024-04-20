@@ -34,11 +34,13 @@ static void add_a_string_with_several_number_return_the_sum2(void **state) {
     assert_int_equal(Add("3,5,7,1,1"), 17);
 }
 
-// TODO: Add the possibility of use \n as separator
 static void add_a_string_with_end_of_line_sep(void **state) {
     assert_int_equal(Add("3\n5,7\n1,1"), 17);
 }
 
+static void add_a_string_with_custom_sep(void **state) {
+    assert_int_equal(Add("//;\n1;2"), 3);
+}
 
 
 int main(void) {
@@ -50,6 +52,7 @@ int main(void) {
         cmocka_unit_test(add_a_string_with_several_number_return_the_sum),
         cmocka_unit_test(add_a_string_with_several_number_return_the_sum2),
         cmocka_unit_test(add_a_string_with_end_of_line_sep),
+        cmocka_unit_test(add_a_string_with_custom_sep),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
